@@ -1,0 +1,2 @@
+-- First migration. It creates nothing and proves that Flyway runs against the database.
+-- The domain tables are added by the migrations that follow.

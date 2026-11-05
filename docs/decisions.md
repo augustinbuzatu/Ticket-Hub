@@ -166,3 +166,15 @@ Entry format:
 ## Decisions by PR
 
 <!-- New entries go below, starting with D-015. -->
+
+### D-015 · Health check from Spring Boot Actuator
+
+- **Date:** 2026-11-05
+- **PR:** 01
+- **Decision:** the health check is Spring Boot Actuator's `/actuator/health`, which includes a
+  database check. Only the `health` endpoint is exposed over HTTP, and it shows the status of each
+  check without its details.
+- **Options considered:** a custom `/health` controller, which needs no extra dependency but means
+  writing and testing the database check, the error handling and the probes by hand.
+- **Reason:** Actuator provides the health endpoint with a built-in database check, and the liveness
+  and readiness probes needed in PR 13, with no custom code to write or test.

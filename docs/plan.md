@@ -18,7 +18,7 @@ by firing 50 simultaneous requests against a real PostgreSQL instance.
 
 ## Progress
 
-- [ ] 01 · Project skeleton
+- [x] 01 · Project skeleton
 - [ ] 02 · CI on pull requests
 - [ ] 03 · Event and seat schema
 - [ ] 04 · Admin endpoints

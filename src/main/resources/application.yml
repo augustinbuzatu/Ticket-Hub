@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: tickethub
+  config:
+    # Lets `./mvnw spring-boot:run` read a local .env file. Real environment variables
+    # take precedence, and the file is optional, so containers rely on the environment only.
+    import: optional:file:.env[.properties]
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+  jpa:
+    hibernate:
+      # Flyway owns the schema; Hibernate only checks that the entities match it.
+      ddl-auto: validate
+    open-in-view: false
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+  endpoint:
+    health:
+      # Shows the status of each check (database, disk space) without their details.
+      show-components: always
